@@ -23,8 +23,11 @@ int main() {
     printf("long long:%llu\n",sizeof(long long));           // 8
     printf("long double:%llu\n",sizeof(long double));       // 16
 
+
     /*
-     * 枚举定义
+     * typedef 用于给类型定义别名
+     * 也可以用来定义struct,enum
+     * typedef [type] [name]
      */
     typedef enum {
         NET_INIT = 0,
@@ -32,6 +35,16 @@ int main() {
         NET_CONNECT_FAIL = 3,
         NET_CONNECT_SUCCESS = 4
     } E_NET_STATUS;
+
+    /*
+     * 枚举定义
+     */
+    enum E_NET_STATUS {
+        NET_INIT_ = 0,
+        NET_CONNECTING_ = 1,
+        NET_CONNECT_FAIL_ = 3,
+        NET_CONNECT_SUCCESS_ = 4
+    };
 
     /*
      * 控制语句
@@ -72,7 +85,33 @@ int main() {
      * sizeof 可以返回实际长度
      */
 
+    /*
+     * 预处理器
+     * #define [word]([param]) [any word]
+     * 预处理器在编译前执行
+     * 可以有参数
+     *
+     * #ifdef 如果define了则执行
+     * #ifndef
+     * #elif
+     * #endif
+     */
 
+    /*
+     * struct
+     * 对象的雏形
+     * 可以嵌套
+     */
+    struct person{
+        int age;
+        char name[4];
+        double money;
+    };
+
+    /*
+     * 指针
+     *
+     */
 
     return 0;
 }
